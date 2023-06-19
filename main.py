@@ -4,8 +4,6 @@ import os
 import streamlit as st
 from translator import google_text_translate
 from speak_text import speak_text
-from pydub import AudioSegment
-import io
 
 @st.cache_data
 def get_base64_of_bin_file(bin_file):
