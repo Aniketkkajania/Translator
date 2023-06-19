@@ -1,5 +1,6 @@
 from gtts import gTTS
 import os
+import pygame.mixer
 import pygame
 
 def speak_text(txt, dest):
