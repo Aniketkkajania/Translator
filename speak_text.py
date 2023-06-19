@@ -3,7 +3,7 @@ import os
 import pygame.mixer
 import pygame
 
-pygame.init()
+pygame.mixer.init()
 
 
 def speak_text(txt, dest):
