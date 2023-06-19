@@ -77,8 +77,8 @@ if __name__ == "__main__":
                 speak_text(trans_text, all_langs[lang.lower()])
                 st.audio("output.wav", format="audio/wav")
                 os.remove("output.wav")
-            except Exception as e:
-                st.write(e)
+            except:
+                st.warning("Currently play isn't available for this language!", icon ="⚠️")
 
 
     #BELOW IS THE CODE TO MAKE A BUTTON THAT WILL PLAY THE TRANSLATED TEXT ON CLICKING IT
