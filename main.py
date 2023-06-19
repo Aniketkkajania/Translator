@@ -1,9 +1,11 @@
 import base64
+import os
 
 import streamlit as st
 from translator import google_text_translate
 from speak_text import speak_text
-
+from pydub import AudioSegment
+import io
 
 @st.cache_data
 def get_base64_of_bin_file(bin_file):
@@ -75,6 +77,8 @@ if __name__ == "__main__":
         if trans_text!="Error!":
             try:
                 speak_text(trans_text, all_langs[lang.lower()])
+                st.audio("output.wav", format="audio/wav")
+                os.remove("output.wav")
             except Exception as e:
                 st.write(e)
 
