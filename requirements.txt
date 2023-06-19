@@ -1,7 +1,7 @@
 beautifulsoup4==4.12.2
 googletrans==3.1.0a0
 gTTS==2.3.2
-playsound
+playsound==1.2.2
 Requests==2.31.0
 translate==3.6.1
 streamlit==1.23.1
