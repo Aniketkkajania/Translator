@@ -1,16 +1,16 @@
 from gtts import gTTS
 import os
-
-import pygame
 from pygame import mixer
+import time
 
-pygame.init()
 
 
 
 def speak_text(txt, dest):
+        mixer.init()
         tts = gTTS(text=txt, lang=dest)
         tts.save("output.mp3")
-        sound = mixer.Sound("output.mp3")
-        sound.play()
+        mixer.music.load("output.mp3")
+        mixer.music.play()
+        time.sleep(4)
         os.remove("output.mp3")
