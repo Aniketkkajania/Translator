@@ -7,3 +7,4 @@ translate==3.6.1
 streamlit==1.23.1
 vext
 vext.gi
+pygobject-pycairo-prebuilt-libraries-vs2019
