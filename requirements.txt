@@ -6,3 +6,4 @@ Requests==2.31.0
 translate==3.6.1
 streamlit==1.23.1
 pygobject
+subprocess
