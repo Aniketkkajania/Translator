@@ -4,7 +4,7 @@ import os
 import pygame
 from pygame import mixer
 
-pygame.mixer.init(44100, -16,2,2048)
+pygame.init()
 
 
 
