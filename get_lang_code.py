@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup as bs
 from googletrans import Translator
 import translator
 
-import gi
 def get_lang_code():
     response = requests.get("https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes")
     # response.status_code
