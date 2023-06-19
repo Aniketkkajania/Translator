@@ -75,8 +75,8 @@ if __name__ == "__main__":
         if trans_text!="Error!":
             try:
                 speak_text(trans_text, all_langs[lang.lower()])
-            except:
-                st.warning("Currently this language isn't supported to play", icon="⚠️")
+            except Exception as e:
+                st.write(e)
 
 
     #BELOW IS THE CODE TO MAKE A BUTTON THAT WILL PLAY THE TRANSLATED TEXT ON CLICKING IT
