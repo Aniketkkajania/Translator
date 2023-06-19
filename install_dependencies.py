@@ -1,0 +1,2 @@
+""" TO INSTALL THE BELOW DEPENDENCIES JUST WRITE THIS COMMAND IN TERMINAL """
+"""pip install - r requirements.txt"""
