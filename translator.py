@@ -10,7 +10,11 @@ def google_text_translate(text, dest_lang):
     translator = Translator()
     if len(text) == 0:
         return "Error!"
-    return translator.translate(text, dest=dest_lang).text
+    else:
+        try:
+            return translator.translate(text, dest=dest_lang).text
+        except:
+            return -1
 
 
 # source_text = input("Enter a text: ")

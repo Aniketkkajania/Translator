@@ -49,13 +49,17 @@ if __name__ == "__main__":
         st.write(" ")
         trans_button = st.button('Translate')
         st.markdown("""<style>
-                    [class = "css-pny9xi e1ewe7hr10"]{
-                        height: 40px;
-                        width: 300px;  
+                    [class="row-widget stButton"]{
+                        padding-left: 90px;
                         border: 5px;  
-                        display: flex;  
+                        display: flex;
+                        margin-left: 50px;
                         justify-content: center;  
-                        align-items: center;  
+                        align-items: center; 
+                    }
+                    [class="css-x78sv8 eqr7zpz4"]{
+                        padding-left: 20px;
+                        padding-right: 20px;
                     }
                     </style>
                     """, unsafe_allow_html= True)
@@ -63,22 +67,19 @@ if __name__ == "__main__":
     if trans_button:
         trans_text = google_text_translate(src_txt, lang)
 
-        try:
-            if trans_text == "Error!":
+        if trans_text == "Error!":
                 st.warning('Source Text field is Empty!', icon ="⚠️")
+        else:
+            if trans_text == -1:
+                st.warning("Currently can't translate in this language", icon ="⚠️")
             else:
                 target_txt = st.text_area("Translated Text", trans_text)
-
-        except:
-            target_txt = st.text_area("Translated Text")
-
-        if trans_text!="Error!":
-            try:
-                speak_text(trans_text, all_langs[lang.lower()])
-                st.audio("output.wav", format="audio/wav")
-                os.remove("output.wav")
-            except:
-                st.warning("Currently play isn't available for this language!", icon ="⚠️")
+                try:
+                    speak_text(trans_text, all_langs[lang.lower()])
+                    st.audio("output.wav", format="audio/wav")
+                    os.remove("output.wav")
+                except:
+                    st.warning("Currently play isn't available for this language!", icon ="⚠️")
 
 
     #BELOW IS THE CODE TO MAKE A BUTTON THAT WILL PLAY THE TRANSLATED TEXT ON CLICKING IT
